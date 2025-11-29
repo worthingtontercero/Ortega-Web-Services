@@ -1,0 +1,231 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-left">
+      <p class="hero-kicker">Local, done-for-you web design</p>
+      <h2>Simple, fast websites for El Paso businesses</h2>
+      <p class="lead">
+        One-page launches and small business websites — affordable and local.
+        We handle everything, so you don't have to.
+      </p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn primary">Request a Quote</a>
+        <a href="#services" class="btn ghost">View Services</a>
+      </div>
+      <div class="hero-meta-row">
+        <span class="pill">Average launch: under 1 week</span>
+        <span class="pill pill-soft">$199 starting price</span>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-badge">El Paso • Local</div>
+      <div class="hero-mock">
+        <div class="hero-mock-header">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="hero-mock-body">
+          <p class="hero-mock-title">Clean, modern layouts</p>
+          <p class="hero-mock-text">
+            Mobile-friendly, fast loading, and easy for your customers to use.
+          </p>
+          <ul class="hero-mock-list">
+            <li>Contact forms that actually send</li>
+            <li>Google Maps & business info</li>
+            <li>Hosting & updates handled for you</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="section">
+  <div class="wrap">
+    <h3>Services</h3>
+    <p class="section-lead">
+      Pick what you need now — you can always upgrade later.
+    </p>
+    <div class="grid services-grid">
+      <div class="card card-service">
+        <h4>One-Page Launch</h4>
+        <p>Landing page with contact form, map, and listing-ready content. Quick setup.</p>
+        <p class="price">$199</p>
+        <p class="card-note">Perfect for new businesses or events.</p>
+      </div>
+      <div class="card card-service card-highlight">
+        <div class="chip">Most popular</div>
+        <h4>Small Business Site</h4>
+        <p>3–5 pages, gallery, contact, basic SEO, and analytics.</p>
+        <p class="price">$420</p>
+        <p class="card-note">Great for established local businesses.</p>
+      </div>
+      <div class="card card-service">
+        <h4>Managed Hosting</h4>
+        <p>Backups, updates, security, and priority support.</p>
+        <p class="price">$20/mo</p>
+        <p class="card-note">We keep things fast, secure, and online.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="section section-subtle">
+  <div class="wrap">
+    <h3>Recent & Sample Work</h3>
+    <p class="section-lead">
+      Clean, friendly layouts that make it easy for customers to find what they need.
+    </p>
+
+    <div class="grid portfolio-grid">
+
+      <!-- Mayer’s Glass: live client with slider -->
+      <article class="portfolio-card">
+        <div class="portfolio-frame">
+          <div class="portfolio-thumb portfolio-thumb--slider">
+            <img
+              src="{{ url_for('static', filename='img/portfolio/mayers_1.png') }}"
+              alt="Mayer’s Glass website homepage"
+              loading="lazy"
+            >
+            <span class="portfolio-badge">Live client</span>
+
+            <!-- link overlay -->
+            <a href="https://mayersglass.com"
+               target="_blank"
+               rel="noopener"
+               class="portfolio-thumb-link">
+              mayersglass.com
+            </a>
+
+            <!-- slider arrows -->
+            <button type="button"
+                    class="slider-arrow slider-prev"
+                    aria-label="Previous screenshot"></button>
+            <button type="button"
+                    class="slider-arrow slider-next"
+                    aria-label="Next screenshot"></button>
+          </div>
+        </div>
+        <h4>Mayer’s Glass</h4>
+        <p>One-page site with quote form, gallery, and mobile-friendly layout.</p>
+        <div class="portfolio-meta">
+          <span class="portfolio-tag">Service business • One-page launch</span>
+          <a href="https://mayersglass.com"
+             target="_blank"
+             rel="noopener"
+             class="portfolio-link">
+            View live site →
+          </a>
+        </div>
+      </article>
+
+      <!-- Local project / prototype with video -->
+      <article class="portfolio-card">
+        <div class="portfolio-frame">
+          <div class="portfolio-thumb">
+            <video
+              src="{{ url_for('static', filename='video/ccmc.mov') }}"
+              class="portfolio-video"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <span class="portfolio-badge badge-soft">Prototype</span>
+          </div>
+        </div>
+        <h4>Local Business Demo</h4>
+        <p>
+          Multi-section layout showing services, hours, and contact with a simple hero section.
+          This project is currently offline, but was previously live as a full site.
+        </p>
+        <div class="portfolio-meta">
+          <span class="portfolio-tag">Demo • Small business layout</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="contact" class="section">
+  <div class="wrap">
+    <h3>Contact for a Quote</h3>
+    <p class="section-lead">
+      Tell me about your business and what you need. I’ll reply within 48 hours.
+    </p>
+    <div class="contact-wrap">
+      <form method="post" action="{{ url_for('contact') }}" class="contact-form">
+        <label>Name
+          <input name="name" required>
+        </label>
+        <label>Business name
+          <input name="business">
+        </label>
+        <label>Phone or Email
+          <input name="contact" required>
+        </label>
+        <label>Message
+          <textarea name="message" rows="4"></textarea>
+        </label>
+        <div class="actions">
+          <button type="submit" class="btn primary">Send</button>
+          <button type="reset" class="btn ghost">Clear</button>
+        </div>
+      </form>
+
+      <aside class="contact-info">
+        <h4>Contact</h4>
+        <p>El Paso, TX</p>
+        <p>Phone: <a href="tel:+19154729382">(915) 472-9382</a></p>
+        <p>Email: <a href="mailto:elpasosites@gmail.com">elpasosites@gmail.com</a></p>
+        <p class="muted">I respond to quote requests within 48 hours.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sliderEl = document.querySelector('.portfolio-thumb--slider');
+    if (!sliderEl) return;
+
+    const img = sliderEl.querySelector('img');
+
+    // List your Mayer’s Glass screenshots here
+    const sources = [
+      "{{ url_for('static', filename='img/portfolio/mayers_1.png') }}",
+      "{{ url_for('static', filename='img/portfolio/mayers_2.png') }}",
+      "{{ url_for('static', filename='img/portfolio/mayers_3.png') }}",
+      "{{ url_for('static', filename='img/portfolio/mayers_4.png') }}"
+    ];
+
+    let idx = 0;
+    function show(i) {
+      idx = (i + sources.length) % sources.length;
+      img.src = sources[idx];
+    }
+
+    const prevBtn = sliderEl.querySelector('.slider-prev');
+    const nextBtn = sliderEl.querySelector('.slider-next');
+
+    prevBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      show(idx - 1);
+    });
+
+    nextBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      show(idx + 1);
+    });
+  });
+</script>
+
+{% endblock %}
